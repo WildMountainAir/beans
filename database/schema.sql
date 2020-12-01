@@ -19,6 +19,7 @@ CREATE TABLE users {
   sessions INT,
   password VARCHAR(25)
 }
-
+INSERT INTO beans VALUES ('Self Love', 'I am love.', false);
+INSERT INTO beans VALUES ('Self Love', 'I am resilient. I am capable. I am loved. I am beautiful. I am enough.', false);
 INSERT INTO beans VALUES ('Self Love', 'My body is healthy; my mind is brilliant; my soul is tranquil.', false);
 INSERT INTO users VALUES ('Alison', 'Sipos', 'LvlyAli', 'alison.sipos@icloud.com', 0, 'password');
