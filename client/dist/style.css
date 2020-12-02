@@ -1,6 +1,7 @@
 /* Custom Styles */
 body {
-  margin: 20px;
+  margin: 0 auto;
+  max-width: 50em;
   font-family: 'Josefin Sans', sans-serif;
 }
 /* Typography */
