@@ -3,8 +3,8 @@ const app = express();
 const PORT = 3008;
 const queries = require('../database/queries');
 
-app.use(express.static('../client/dist')); // Host your dist folder up to the server
-app.use(express.json()); // Alternative to BodyParser
+app.use(express.static('../client/dist'));
+app.use(express.json());
 
 app.post("/", (req, res) => {
     res.send('index');
