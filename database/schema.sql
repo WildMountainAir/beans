@@ -27,6 +27,8 @@ INSERT INTO beans VALUES ('Self Love', 'I am grateful for the good in my life.',
 INSERT INTO beans VALUES ('Self Love', 'I am learning to take control of my habits.', false);
 INSERT INTO beans VALUES ('Self Love', 'I only compare myself to myself.', false);
 INSERT INTO beans VALUES ('Self Love', 'I am enough.', false);
+INSERT INTO beans VALUES ('Self Love', 'My thoughts are not facts.', false);
+INSERT INTO beans VALUES ('Self Love', 'I am not my anxiety.', false);
 INSERT INTO beans VALUES ('Self Love', 'I love and forgive myself.', false);
 INSERT INTO beans VALUES ('Self Love', 'My thoughts do not define who I am.', false);
 INSERT INTO beans VALUES ('Self Love', 'I deserve all of the good things that are in my life.', false);
@@ -68,6 +70,8 @@ INSERT INTO beans VALUES ('Career', 'I have the power to create change.', false)
 INSERT INTO beans VALUES ('Career', 'I am transforming.', false);
 INSERT INTO beans VALUES ('Career', 'I passionate about my creativity.', false);
 INSERT INTO beans VALUES ('Career', 'I believe in myself.', false);
+INSERT INTO beans VALUES ('Career', 'I am becoming wealthy.', false);
+INSERT INTO beans VALUES ('Career', 'My productivity does not define my worth.', false);
 INSERT INTO beans VALUES ('Career', 'The future is safe. All is well.', false);
 INSERT INTO beans VALUES ('Career', 'I overcome my fears by following my dreams.', false);
 INSERT INTO beans VALUES ('Happiness', 'I am in control of my feelings.', false);
@@ -76,6 +80,7 @@ INSERT INTO beans VALUES ('Happiness', 'I am living in the moment.', false);
 INSERT INTO beans VALUES ('Happiness', 'I am happy now in this moment which is all there is.', false);
 INSERT INTO beans VALUES ('Happiness', 'I am happy to be who I am, where I am, and when I am.', false);
 INSERT INTO beans VALUES ('Happiness', 'I deserve to be happy and loved.', false);
+INSERT INTO beans VALUES ('Happiness', 'I am free.', false);
 INSERT INTO beans VALUES ('Happiness', 'I am happy. I am healthy. I am wealthy. I am loved. I am respected.', false);
 
 INSERT INTO users VALUES ('Alison', 'Sipos', 'LvlyAli', 'alison.sipos@icloud.com', 0, 'password');
