@@ -3,12 +3,18 @@ import Container from 'react-bootstrap/Container';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 
 import listBeans from './lib/routes';
+import getSelfLove from './lib/routes';
 
 // import BeansCarousel from './components/beansCarousel.jsx';
 import BeansList from './components/beansList.jsx';
+import SelfLoveBeans from './components/selfLoveBeans.jsx';
+import ConfidenceBeans from './components/confidenceBeans.jsx';
+import AcceptanceBeans from './components/acceptanceBeans.jsx';
+import GrowthBeans from './components/growthBeans.jsx';
 
 const App = () => {
   const [beans, setAllBeans] = useState([]);
+  const [beansSelfLove, setSelfLoveBeans] = useState([]);
   const [viewBeans, setViewBeans] = useState(false);
   const [viewSelfLove, setViewSelfLove] = useState(false);
   const [viewConfidence, setViewConfidence] = useState(false);
@@ -18,6 +24,10 @@ const App = () => {
   useEffect(() => {
     listBeans((error, response) => {
       error ? 'could not get beans' : setAllBeans(response);
+    })
+    getSelfLove((error, response) => {
+      console.log('beans', beansSelfLove);
+      error ? 'could not get self-love beans' : setSelfLoveBeans(response);
     })
   }, []);
 
@@ -51,10 +61,46 @@ const App = () => {
           </Container>
         </Jumbotron>
         <div className="category-box">
-        <button className="button-root category" onClick={handleSelfLove}>Self Love</button>
-        <button className="button-root category" onClick={handleConfidence}>Confidence</button>
-        <button className="button-root category" onClick={handleAcceptance}>Acceptance</button>
-        <button className="button-root category" onClick={handleGrowth}>Growth</button>
+        {
+          viewSelfLove
+          ?
+          <div>
+            <button className="button-root category" onClick={handleSelfLove}>Hide Self Love Beans</button>
+            <SelfLoveBeans beans={beans} beansSelfLove={beansSelfLove}/>
+          </div>
+          :
+          <button className="button-root category" onClick={handleSelfLove}>View Self Love Beans</button>
+        }
+        {
+          viewConfidence
+          ?
+          <div>
+            <button className="button-root category" onClick={handleConfidence}>Hide Confidence Beans</button>
+            <ConfidenceBeans beans={beans}/>
+          </div>
+          :
+          <button className="button-root category" onClick={handleConfidence}>View Confidence Beans</button>
+        }
+        {
+          viewAcceptance
+          ?
+          <div>
+            <button className="button-root category" onClick={handleAcceptance}>Hide Acceptance Beans</button>
+            <AcceptanceBeans beans={beans}/>
+          </div>
+          :
+          <button className="button-root category" onClick={handleAcceptance}>View Acceptance Beans</button>
+        }
+        {
+          viewGrowth
+          ?
+          <div>
+            <button className="button-root category" onClick={handleGrowth}>Hide Growth Beans</button>
+            <GrowthBeans beans={beans}/>
+          </div>
+          :
+          <button className="button-root category" onClick={handleGrowth}>View Growth Beans</button>
+        }
         </div>
         { 
           viewBeans 

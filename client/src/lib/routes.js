@@ -8,4 +8,13 @@ const listBeans = (callback) => {
     .catch((error) => { callback(error, null); });
 };
 
-export default listBeans;
+const getSelfLove = (categorySL = 'Self Love', callback) => {
+  console.log('love');
+  const path = `${Path}/beans/?category=${categorySL}`;
+  fetch(path)
+    .then((result) => result.json())
+    .then((data) => { callback(null, data); })
+    .catch((error) => { callback(error, null); });
+}
+
+export { listBeans as default, getSelfLove }
