@@ -11,6 +11,7 @@ import SelfLoveBeans from './components/selfLoveBeans.jsx';
 import ConfidenceBeans from './components/confidenceBeans.jsx';
 import AcceptanceBeans from './components/acceptanceBeans.jsx';
 import GrowthBeans from './components/growthBeans.jsx';
+import RandomBean from './components/randomBean.jsx'
 
 const App = () => {
   const [beans, setAllBeans] = useState([]);
@@ -20,6 +21,7 @@ const App = () => {
   const [viewConfidence, setViewConfidence] = useState(false);
   const [viewAcceptance, setViewAcceptance] = useState(false);
   const [viewGrowth, setViewGrowth] = useState(false);
+  const [viewRandom, setViewRandom] = useState(false);
 
   useEffect(() => {
     listBeans((error, response) => {
@@ -50,6 +52,9 @@ const App = () => {
   const handleGrowth = () => {
     setViewGrowth(!viewGrowth);
   }
+  const handleRandom = () => {
+    setViewRandom(!viewRandom);
+  }
 
   return (
     <div>
@@ -61,6 +66,26 @@ const App = () => {
           </Container>
         </Jumbotron>
         <div className="category-box">
+        {
+          viewRandom
+          ?
+          <div>
+            <button className="button-root category" onClick={handleRandom}>Hide Random Bean</button>
+            <RandomBean beans={beans}/>
+          </div>
+          :
+          <button className="button-root category" onClick={handleRandom}>Random Bean</button>
+        }
+        {
+          viewSelfLove
+          ?
+          <div>
+            <button className="button-root category" onClick={handleSelfLove}>Hide Self Love Beans</button>
+            <SelfLoveBeans beans={beans} beansSelfLove={beansSelfLove}/>
+          </div>
+          :
+          <button className="button-root category" onClick={handleSelfLove}>View Self Love Beans</button>
+        }
         {
           viewSelfLove
           ?
