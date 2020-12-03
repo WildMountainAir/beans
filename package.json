@@ -21,7 +21,7 @@
   "bugs": {
     "url": "https://github.com/WildMountainAir/beans/issues"
   },
-  "homepage": "https://wildmountainair.github.io/beans/",
+  "homepage": "https://github.com/WildMountainAir/beans.git",
   "dependencies": {
     "bootstrap": "^4.5.3",
     "express": "^4.17.1",
