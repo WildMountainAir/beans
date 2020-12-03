@@ -12,7 +12,6 @@ connection.connect();
   😈  Get All Beans   😈
   😈😈😈😈😈😈😈😈😈😈😈😈😈*/
 const allBeans = (callback) => {
-  console.log('getting beans')
   var sql = "SELECT category, bean FROM beans";
   connection.query(sql, (error, results) => {
     if(error) {
