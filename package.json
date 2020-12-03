@@ -10,7 +10,7 @@
     "start": "cd server/ && nodemon server.js",
     "data": "mysql -u root -p",
     "seed": "mysql -u root -p < database/schema.sql",
-    "build": "webpack --watch"
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
