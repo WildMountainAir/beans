@@ -1,21 +1,83 @@
 /* Custom Styles */
 body {
+  background-color: #fff9f9;
+  color: #3e3d57;
+  font-family: 'Josefin Sans', sans-serif;
   margin: 0 auto;
   max-width: 50em;
-  font-family: 'Josefin Sans', sans-serif;
 }
 /* Typography */
 .beans-intro {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 300;
 }
 /* Logos */
 .header-logo {
   width: 100%;
-  margin: 10px 20px;
+  margin-top: 30px;
 }
 /* Buttons */
 .button-root {
+  margin: 5px 0;
+  border: none;
   font-family: 'Merriweather', serif;
+  border-radius: 10px;
+  padding: 10px;
+  transition-duration: 0.4s;
+  outline: none !important;
+  box-shadow: none !important;
+}
+.button-root:active {
+    transform: scale(.97);
+}
+.view-all {
+  background-color: #cb527e;
+  width: 100%;
+  font-size: 2rem;
+  color: #edc17e;
+}
+.hide-all {
+  background-color: #edc17e;
+  width: 100%;
+  font-size: 2rem;
+  color: #cb527e;
+}
+.category {
+  background-color: #cb527e;
+  width: 100%;
+  font-size: 2rem;
+  color: #edc17e;
+}
+.category-box {
+  align-content: center;
+  width: 100%;
 }
 /* App Header */
+
+/* Beans List */
+.beans-table {
+  width: 100%;
+  margin: 20px auto;
+  table-layout: auto;
+  border-collapse: collapse;
+  /* border: solid 1px #cb527e;
+  border-radius: 10% !important; */
+  text-align: left;
+}
+.beans-table-header {
+  color: #cb527e;
+  font-family: 'Merriweather', serif;
+  font-size: 2rem;
+  padding: 10px 15px;
+}
+.beans-table-data {
+  font-size: 1.5rem;
+  padding: 10px 15px;
+}
+.beans-category {
+  color: #edc17e;
+}
+
+.beans-bean {
+  color: #3e3d57;
+}
