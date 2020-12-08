@@ -16,7 +16,7 @@ import RandomBean from './components/randomBean.jsx';
 
 const App = () => {
   const [beans, setAllBeans] = useState([]);
-  const [beansSelfLove, setSelfLoveBeans] = useState([]);
+  // const [beansSelfLove, setSelfLoveBeans] = useState([]);
   const [viewBeans, setViewBeans] = useState(false);
   const [viewSelfLove, setViewSelfLove] = useState(false);
   const [viewConfidence, setViewConfidence] = useState(false);
@@ -28,10 +28,10 @@ const App = () => {
     listBeans((error, response) => {
       error ? 'could not get beans' : setAllBeans(response);
     })
-    getSelfLove((error, response) => {
-      console.log('beans', beansSelfLove);
-      error ? 'could not get self-love beans' : setSelfLoveBeans(response);
-    })
+    // getSelfLove((error, response) => {
+    //   console.log('beans', beansSelfLove);
+    //   error ? 'could not get self-love beans' : setSelfLoveBeans(response);
+    // })
   }, []);
 
   const handleView = () => {
