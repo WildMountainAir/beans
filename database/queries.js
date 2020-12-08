@@ -12,12 +12,11 @@ connection.connect();
   😈  Get All Beans   😈
   😈😈😈😈😈😈😈😈😈😈😈😈😈*/
 const allBeans = (callback) => {
-  var sql = "SELECT category, bean FROM beans";
+  var sql = "SELECT bean FROM beans";
   connection.query(sql, (error, results) => {
     if(error) {
       callback(error, null);
     } else {
-      console.log('all beans retrieved')
       callback(null, results);
     }
   })
@@ -53,4 +52,4 @@ module.exports = {
   allBeans,
   categoryBeans,
   favoriteBeans,
-};
+}
