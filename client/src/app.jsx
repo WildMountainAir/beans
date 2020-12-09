@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import Container from 'react-bootstrap/Container';
 import Jumbotron from 'react-bootstrap/Jumbotron';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 import listBeans from './lib/routes';
 import getSelfLove from './lib/routes';
@@ -16,7 +18,7 @@ import RandomBean from './components/randomBean.jsx';
 
 const App = () => {
   const [beans, setAllBeans] = useState([]);
-  // const [beansSelfLove, setSelfLoveBeans] = useState([]);
+  const [beansSelfLove, setSelfLoveBeans] = useState([]);
   const [viewBeans, setViewBeans] = useState(false);
   const [viewSelfLove, setViewSelfLove] = useState(false);
   const [viewConfidence, setViewConfidence] = useState(false);
@@ -36,24 +38,54 @@ const App = () => {
 
   const handleView = () => {
     setViewBeans(!viewBeans);
+    setViewSelfLove(false);
+    setViewConfidence(false);
+    setViewAcceptance(false);
+    setViewGrowth(false);
+    setViewRandom(false);
   }
 
   const handleSelfLove = () => {
+    setViewBeans(false);
+    setViewConfidence(false);
+    setViewAcceptance(false);
+    setViewGrowth(false);
+    setViewRandom(false);
     setViewSelfLove(!viewSelfLove);
   }
 
   const handleConfidence = () => {
+    setViewBeans(false);
+    setViewSelfLove(false);
+    setViewAcceptance(false);
+    setViewGrowth(false);
+    setViewRandom(false);
     setViewConfidence(!viewConfidence);
   }
 
   const handleAcceptance = () => {
+    setViewBeans(false);
+    setViewSelfLove(false);
+    setViewConfidence(false);
+    setViewGrowth(false);
+    setViewRandom(false);
     setViewAcceptance(!viewAcceptance);
   }
 
   const handleGrowth = () => {
+    setViewBeans(false);
+    setViewSelfLove(false);
+    setViewConfidence(false);
+    setViewAcceptance(false);
+    setViewRandom(false);
     setViewGrowth(!viewGrowth);
   }
   const handleRandom = () => {
+    setViewBeans(false);
+    setViewSelfLove(false);
+    setViewConfidence(false);
+    setViewAcceptance(false);
+    setViewGrowth(false);
     setViewRandom(!viewRandom);
   }
 
@@ -67,70 +99,107 @@ const App = () => {
           </Container>
         </Jumbotron>
         <div className="category-box">
+          <Row >
+            {
+              viewSelfLove
+              ?
+              <button className="button-root category-hide" onClick={handleSelfLove}> Hide<br></br>Self Love<br></br>Beans</button>
+              :
+              <button className="button-root category" onClick={handleSelfLove}>View<br></br>Self Love<br></br>Beans</button>
+            }
+            {
+              viewConfidence
+              ?
+              <button className="button-root category-hide m-l" onClick={handleConfidence}>Hide<br></br>Confidence<br></br>Beans</button>
+              :
+              <button className="button-root category m-l" onClick={handleConfidence}>View<br></br>Confidence<br></br>Beans</button>
+            }
+          </Row>
+          <Row>
+          {
+            viewAcceptance
+            ?
+            <button className="button-root category-hide" onClick={handleAcceptance}>Hide<br></br>Acceptance<br></br>Beans</button>
+            :
+            <button className="button-root category" onClick={handleAcceptance}>View<br></br>Acceptance<br></br>Beans</button>
+          }{
+            viewGrowth
+            ?
+            <button className="button-root category-hide m-l" onClick={handleGrowth}>Hide<br></br>Growth<br></br>Beans</button>
+            :
+            <button className="button-root category m-l" onClick={handleGrowth}>View<br></br>Growth<br></br>Beans</button>
+          }
+          </Row>
+          <Row>
+          {
+            viewRandom
+            ?
+            <button className="button-root category-hide" onClick={handleRandom}>Hide<br></br>Random<br></br>Bean</button>
+            :
+            <button className="button-root category" onClick={handleRandom}>View<br></br>Random<br></br>Bean</button>
+          }
+          { 
+            viewBeans 
+            ? 
+            <button className="button-root category-hide m-l" onClick={handleView}>Hide<br></br>All<br></br>Beans</button>
+            : 
+            <button className="button-root category m-l" onClick={handleView}>View<br></br>All<br></br>Beans</button>
+          }
+          </Row>
+          {
+            viewSelfLove
+            ?
+            <div>
+              <SelfLoveBeans beans={beans} beansSelfLove={beansSelfLove}/>
+            </div>
+            :
+            ""
+          }
+          {
+            viewConfidence
+            ?
+            <div>
+              <ConfidenceBeans beans={beans}/>
+            </div>
+            :
+            ""
+          }
+          {
+            viewAcceptance
+            ?
+            <div>
+              <AcceptanceBeans beans={beans}/>
+            </div>
+            :
+            ""
+          }
+          {
+            viewGrowth
+            ?
+            <div>
+              <GrowthBeans beans={beans}/>
+            </div>
+            :
+            ""
+          }
         {
           viewRandom
           ?
           <div>
-            <button className="button-root category" onClick={handleRandom}>Hide Random Bean</button>
             <RandomBean beans={beans}/>
           </div>
           :
-          <button className="button-root category" onClick={handleRandom}>Random Bean</button>
-        }
-        {
-          viewSelfLove
-          ?
-          <div>
-            <button className="button-root category" onClick={handleSelfLove}>Hide Self Love Beans</button>
-            <SelfLoveBeans beans={beans} beansSelfLove={beansSelfLove}/>
-          </div>
-          :
-          <button className="button-root category" onClick={handleSelfLove}>View Self Love Beans</button>
-        }
-        {
-          viewConfidence
-          ?
-          <div>
-            <button className="button-root category" onClick={handleConfidence}>Hide Confidence Beans</button>
-            <ConfidenceBeans beans={beans}/>
-          </div>
-          :
-          <button className="button-root category" onClick={handleConfidence}>View Confidence Beans</button>
-        }
-        {
-          viewAcceptance
-          ?
-          <div>
-            <button className="button-root category" onClick={handleAcceptance}>Hide Acceptance Beans</button>
-            <AcceptanceBeans beans={beans}/>
-          </div>
-          :
-          <button className="button-root category" onClick={handleAcceptance}>View Acceptance Beans</button>
-        }
-        {
-          viewGrowth
-          ?
-          <div>
-            <button className="button-root category" onClick={handleGrowth}>Hide Growth Beans</button>
-            <GrowthBeans beans={beans}/>
-          </div>
-          :
-          <button className="button-root category" onClick={handleGrowth}>View Growth Beans</button>
+          ""
         }
         </div>
         { 
           viewBeans 
           ? 
           <div>
-            <button className="button-root hide-all" onClick={handleView}> 
-              Hide All Beans
-            </button>
             <BeansList beans={beans} />
           </div> 
           : 
-          <button className="button-root view-all" onClick={handleView}> 
-            View All Beans
-          </button>
+          ""
         }
       </Container>
     </div>
