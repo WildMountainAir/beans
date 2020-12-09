@@ -30,27 +30,28 @@ body {
 .button-root:active {
     transform: scale(.97);
 }
-.view-all {
-  background-color: #cb527e;
-  width: 100%;
-  font-size: 2rem;
-  color: #edc17e;
-}
-.hide-all {
-  background-color: #edc17e;
-  width: 100%;
-  font-size: 2rem;
-  color: #cb527e;
-}
 .category {
   background-color: #cb527e;
-  width: 100%;
+  width: 22.5rem;
+  height: 22.5rem;
   font-size: 2rem;
   color: #edc17e;
+  margin-bottom: 10%;
+}
+.category-hide {
+  background-color: #edc17e;
+  width: 22.5rem;
+  height: 22.5rem;
+  font-size: 2rem;
+  color: #cb527e;
+  margin-bottom: 10%;
 }
 .category-box {
   align-content: center;
   width: 100%;
+}
+.m-l {
+  margin-left: 10%;
 }
 /* App Header */
 
@@ -71,7 +72,7 @@ body {
   padding: 10px 15px;
 }
 .beans-table-data {
-  font-size: 1.5rem;
+  font-size: 2rem;
   padding: 10px 15px;
 }
 .beans-category {
@@ -80,4 +81,8 @@ body {
 
 .beans-bean {
   color: #3e3d57;
+}
+.beans-title {
+  font-size: 3rem;
+  color: #cb527e;
 }
