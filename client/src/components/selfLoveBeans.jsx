@@ -14,6 +14,7 @@ const SelfLoveBeans = ({beans}) => {
   return (
     <div>
       <table className="beans-table">
+          <thead className="beans-table-data beans-title">Focus your intention on Self Love</thead>
         <tbody>
           {
             // eslint-disable-next-line react/prop-types
