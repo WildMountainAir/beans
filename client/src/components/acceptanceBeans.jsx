@@ -21,7 +21,7 @@ const AcceptanceBeans = ({beans}) => {
             acceptanceArray.map((bean) => {
             return (
               <tr key={uuidv4()}>
-                <td className="beans-table-data beans-bean">{bean.bean}</td>
+                <td className="beans-table-data beans-bean"><img className="icon" src="https://beans-affirmations.s3.us-east-2.amazonaws.com/Beans_Icon.png" alt="logo icon"></img> {bean.bean}</td>
               </tr>
             )
           })}
