@@ -71,6 +71,12 @@ INSERT INTO beans (category, bean, favorite) VALUES ('Acceptance', 'I am in cont
 INSERT INTO beans (category, bean, favorite) VALUES ('Acceptance', 'I am happy now in this moment which is all there is.', false);
 INSERT INTO beans (category, bean, favorite) VALUES ('Acceptance', 'I deserve to be happy and loved.', false);
 INSERT INTO beans (category, bean, favorite) VALUES ('Acceptance', 'I am allowed to say no to others and yes to myself.', false);
+INSERT INTO beans (category, bean, favorite) VALUES ('Acceptance', 'My productivity does not define my worth.', false);
+INSERT INTO beans (category, bean, favorite) VALUES ('Acceptance', 'I will practice patience and loving kindness to everyone I encounter.', false);
+INSERT INTO beans (category, bean, favorite) VALUES ('Acceptance', 'I am not my circumstance.', false);
+INSERT INTO beans (category, bean, favorite) VALUES ('Acceptance', 'I will not let the fear of failure control me.', false);
+INSERT INTO beans (category, bean, favorite) VALUES ('Acceptance', 'I act for my future, not because of my past.', false);
+INSERT INTO beans (category, bean, favorite) VALUES ('Acceptance', 'I am open to the fact that I cannot even see how great I will become until I start becoming.', false);
 INSERT INTO beans (category, bean, favorite) VALUES ('Growth', 'My work challenges and excites me.', false);
 INSERT INTO beans (category, bean, favorite) VALUES ('Growth', 'I am creating the career of my dreams.', false);
 INSERT INTO beans (category, bean, favorite) VALUES ('Growth', 'I have a lot to offer the world.', false);
@@ -86,9 +92,13 @@ INSERT INTO beans (category, bean, favorite) VALUES ('Growth', 'I am transformin
 INSERT INTO beans (category, bean, favorite) VALUES ('Growth', 'I passionate about my creativity.', false);
 INSERT INTO beans (category, bean, favorite) VALUES ('Growth', 'I believe in myself.', false);
 INSERT INTO beans (category, bean, favorite) VALUES ('Growth', 'I am becoming wealthy.', false);
-INSERT INTO beans (category, bean, favorite) VALUES ('Growth', 'My productivity does not define my worth.', false);
 INSERT INTO beans (category, bean, favorite) VALUES ('Growth', 'The future is safe. All is well.', false);
 INSERT INTO beans (category, bean, favorite) VALUES ('Growth', 'I overcome my fears by following my dreams.', false);
-
+INSERT INTO beans (category, bean, favorite) VALUES ('Growth', 'My way forward is paved with the strength of an open heart and the power of an open mind.', false);
+INSERT INTO beans (category, bean, favorite) VALUES ('Growth', 'I refuse settle for where I am, when I know I have better within me.', false);
+INSERT INTO beans (category, bean, favorite) VALUES ('Growth', 'I live with a purpose and my purpose lights my path.', false);
+INSERT INTO beans (category, bean, favorite) VALUES ('Growth', 'I am releasing old habits and blazing new trails.', false);
+INSERT INTO beans (category, bean, favorite) VALUES ('Growth', 'I am planting the seeds of growth in my life and I am committed to watering them every day.', false);
+INSERT INTO beans (category, bean, favorite) VALUES ('Growth', 'I am exchanging my need to always be right for my need to always be growing.', false);
 
 INSERT INTO users (fname, lname, username, email, passcode) VALUES ('Alison', 'Sipos', 'LvlyAli', 'alison.sipos@icloud.com', 'password');
