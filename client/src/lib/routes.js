@@ -8,7 +8,7 @@ const listBeans = (callback) => {
     .catch((error) => { callback(error, null); });
 };
 
-const getSelfLove = (categorySL = 'Self Love', callback) => {
+const getSelfLove = (categorySL, callback) => {
   console.log('love');
   const path = `${Path}/beans/?category=${categorySL}`;
   fetch(path)
