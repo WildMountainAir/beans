@@ -9,9 +9,9 @@ const RandomBean = ({ beans}) => {
   return (
     <div>
       <table className="beans-table">
+      <thead className="beans-table-data beans-title">Focus your intention on {beans[randomNum].category}</thead>
         <tbody>
               <tr key={uuidv4()}>
-                <td className="beans-table-data beans-category">Focus your intention on {beans[randomNum].category}</td>
                 <td className="beans-table-data beans-bean">{beans[randomNum].bean}</td>
               </tr>
         </tbody>
