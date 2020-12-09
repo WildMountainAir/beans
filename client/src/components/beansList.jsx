@@ -8,12 +8,6 @@ const BeansList = ({ beans}) => {
   return (
     <div>
       <table className="beans-table">
-        {/* <thead>
-          <tr>
-            <th className="beans-table-header">Category</th>
-            <th className="beans-table-header">Bean Affirmations</th>
-          </tr>
-        </thead> */}
         <tbody>
           {
             // eslint-disable-next-line react/prop-types
