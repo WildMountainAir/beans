@@ -3,8 +3,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
 
-const RandomBean = ({ beans}) => {
-  let randomNum = Math.floor(Math.random() * Math.floor(66));
+const RandomBean = ({beans}) => {
+  let randomNum = Math.floor(Math.random() * Math.floor(81));
   console.log('random:', randomNum);
   return (
     <div>
