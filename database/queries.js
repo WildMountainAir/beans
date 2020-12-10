@@ -17,7 +17,6 @@ const allBeans = (callback) => {
     if(error) {
       callback(error, null);
     } else {
-      console.log('all beans retrieved')
       callback(null, results);
     }
   })
