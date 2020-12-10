@@ -4,12 +4,15 @@ body {
   color: #3e3d57;
   font-family: 'Josefin Sans', sans-serif;
   margin: 0 auto;
-  margin-bottom: 20px;
   max-width: 50em;
 }
 /* Typography */
 .beans-intro {
-  font-size: 1.5rem;
+  font-size: 2rem;
+  font-weight: 300;
+}
+.contact {
+  font-size: 2rem;
   font-weight: 300;
 }
 /* Logos */
@@ -17,9 +20,21 @@ body {
   width: 100%;
   margin-top: 30px;
 }
+.footer-logo {
+  width: 30%;
+  height: auto;
+}
 .icon {
   height: 1.5rem;
   width: 1.5rem;
+}
+.contact-icon {
+  width: 150px;
+  height: auto;
+  margin: 5px;
+}
+.m-l-icon {
+  margin-left: 10%;
 }
 /* Buttons */
 .button-root {
@@ -54,13 +69,23 @@ body {
 .category-box {
   align-content: center;
   width: 100%;
+  margin-top: 5rem;
 }
 .m-l {
   margin-left: 10%;
 }
 /* App Header */
-
+.links {
+  font-size: 2rem;
+  color: #cb527e;
+  display: inline;
+}
 /* Beans List */
+.beans-placeholder {
+  font-family: 'Merriweather', serif;
+  font-size: 3rem;
+  text-align: center;
+}
 .beans-table {
   width: 100%;
   margin: 20px auto;
