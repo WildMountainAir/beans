@@ -2,13 +2,14 @@ import React, {useState, useEffect} from 'react';
 import Container from 'react-bootstrap/Container';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 
 import listBeans from './lib/routes';
 import getSelfLove from './lib/routes';
 
 // import BeansCarousel from './components/beansCarousel.jsx';
 // import Welcome from './components/welcome.jsx';
+import About from './components/about.jsx';
+import Contact from './components/contact.jsx';
 import BeansList from './components/beansList.jsx';
 import SelfLoveBeans from './components/selfLoveBeans.jsx';
 import ConfidenceBeans from './components/confidenceBeans.jsx';
@@ -25,6 +26,8 @@ const App = () => {
   const [viewAcceptance, setViewAcceptance] = useState(false);
   const [viewGrowth, setViewGrowth] = useState(false);
   const [viewRandom, setViewRandom] = useState(false);
+  const [viewAbout, setViewAbout] = useState(false);
+  const [viewContact, setViewContact] = useState(false);
 
   useEffect(() => {
     listBeans((error, response) => {
@@ -88,6 +91,14 @@ const App = () => {
     setViewGrowth(false);
     setViewRandom(!viewRandom);
   }
+  const handleAbout = () => {
+    setViewContact(false);
+    setViewAbout(!viewAbout);
+  }
+  const handleContact = () => {
+    setViewAbout(false);
+    setViewContact(!viewContact);
+  }
 
   return (
     <div>
@@ -95,9 +106,46 @@ const App = () => {
         <Jumbotron fluid>
           <Container>
             <img src="https://beans-affirmations.s3.us-east-2.amazonaws.com/Beans_Long.png" alt="beans logo" className="header-logo"/>
-            <p className="beans-intro">We talk to ourselves through our thoughts and inner monologue more than anyone else talks to us. It is no wonder our thoughts play a large role in our overall success and happiness. It is so important to find ways to improve our mindset and speak kindly to ourselves, or risk falling into negative thought patterns. That&apos;s where beans come in! Beans are a powerful way to improve your mindset on a daily basis.</p>
           </Container>
         </Jumbotron>
+            <table>
+              {
+                viewAbout
+                ?
+                <tbody>
+                  <tr>
+                    <td><a onClick={handleAbout} className="links">About</a></td>
+                  </tr>
+                  <tr>
+                    <td><About /></td>
+                  </tr>
+                </tbody>
+                :
+                <tbody>
+                  <tr>
+                    <td><a onClick={handleAbout} className="links">About</a></td>
+                  </tr>
+                </tbody>
+              }
+              {
+                viewContact
+                ?
+                <tbody>
+                  <tr>
+                    <td><a onClick={handleContact} className="links">Contact</a></td>
+                  </tr>
+                  <tr>
+                    <td><Contact /></td>
+                  </tr>
+                </tbody>
+                :
+                <tbody>
+                  <tr>
+                    <td><a onClick={handleContact} className="links">Contact</a></td>
+                  </tr>
+                </tbody>
+              }
+            </table>
         <div className="category-box">
           <Row >
             {
@@ -201,7 +249,22 @@ const App = () => {
           : 
           ""
         }
+        {
+          viewBeans === false 
+          && viewSelfLove === false 
+          && viewAcceptance === false 
+          && viewConfidence === false 
+          && viewGrowth === false 
+          && viewRandom === false ?
+          <p className="beans-placeholder">Choose A Beans Category or a Random Bean to View Affirmations</p>
+          :
+          <></>
+        }
+        
       </Container>
+      <footer>
+        Created by <a>Alison Sipos </a>
+      </footer>
     </div>
   );
 }
