@@ -103,7 +103,7 @@ const App = () => {
   return (
     <div>
       <Container>
-        <Jumbotron fluid>
+        <Jumbotron fluid className="jumbo-style">
           <Container>
             <img src="https://beans-affirmations.s3.us-east-2.amazonaws.com/Beans_Long.png" alt="beans logo" className="header-logo"/>
           </Container>
@@ -113,87 +113,97 @@ const App = () => {
                 viewAbout
                 ?
                 <tbody>
-                  <tr>
-                    <td><a onClick={handleAbout} className="links">About</a></td>
-                  </tr>
-                  <tr>
+                  <Row>
+                    <td><a onClick={handleAbout} className="links">About <button className="arrow-btn"><img className="arrow" src="https://beans-affirmations.s3.us-east-2.amazonaws.com/arrow.png"></img></button></a></td>
+                  </Row>
+                  <Row>
                     <td><About /></td>
-                  </tr>
+                  </Row>
                 </tbody>
                 :
                 <tbody>
-                  <tr>
-                    <td><a onClick={handleAbout} className="links">About</a></td>
-                  </tr>
+                  <Row>
+                    <td><a onClick={handleAbout} className="links">About <button className="arrow-btn"><img className="arrow" src="https://beans-affirmations.s3.us-east-2.amazonaws.com/arrow+(1).png"></img></button></a></td>
+                  </Row>
                 </tbody>
               }
               {
                 viewContact
                 ?
                 <tbody>
-                  <tr>
-                    <td><a onClick={handleContact} className="links">Contact</a></td>
-                  </tr>
-                  <tr>
+                  <Row>
+                    <td><a onClick={handleContact} className="links">Contact <button className="arrow-btn"><img className="arrow" src="https://beans-affirmations.s3.us-east-2.amazonaws.com/arrow.png"></img></button></a></td>
+                  </Row>
+                  <Row>
                     <td><Contact /></td>
-                  </tr>
+                  </Row>
                 </tbody>
                 :
                 <tbody>
-                  <tr>
-                    <td><a onClick={handleContact} className="links">Contact</a></td>
-                  </tr>
+                  <Row>
+                    <td><a onClick={handleContact} className="links">Contact <button className="arrow-btn"><img className="arrow" src="https://beans-affirmations.s3.us-east-2.amazonaws.com/arrow+(1).png"></img></button></a></td>
+                  </Row>
                 </tbody>
               }
             </table>
         <div className="category-box">
           <Row >
             {
+              viewRandom
+              ?
+              <button className="button-root category-hide" onClick={handleRandom}>Hide<br></br>Bean</button>
+              :
+              <button className="button-root category" onClick={handleRandom}>Random<br></br>Bean</button>
+            }
+            {
               viewSelfLove
               ?
-              <button className="button-root category-hide" onClick={handleSelfLove}> Hide<br></br>Self Love<br></br>Beans</button>
+              <button className="button-root category-hide m-l" onClick={handleSelfLove}> Hide<br></br>Beans</button>
               :
-              <button className="button-root category" onClick={handleSelfLove}>View<br></br>Self Love<br></br>Beans</button>
+              <button className="button-root category m-l" onClick={handleSelfLove}>Self Love<br></br>Beans</button>
             }
             {
               viewConfidence
               ?
-              <button className="button-root category-hide m-l" onClick={handleConfidence}>Hide<br></br>Confidence<br></br>Beans</button>
+              <button className="button-root category-hide m-l" onClick={handleConfidence}>Hide<br></br>Beans</button>
               :
-              <button className="button-root category m-l" onClick={handleConfidence}>View<br></br>Confidence<br></br>Beans</button>
+              <button className="button-root category m-l" onClick={handleConfidence}>Confidence<br></br>Beans</button>
             }
           </Row>
           <Row>
           {
-            viewAcceptance
-            ?
-            <button className="button-root category-hide" onClick={handleAcceptance}>Hide<br></br>Acceptance<br></br>Beans</button>
-            :
-            <button className="button-root category" onClick={handleAcceptance}>View<br></br>Acceptance<br></br>Beans</button>
-          }{
             viewGrowth
             ?
-            <button className="button-root category-hide m-l" onClick={handleGrowth}>Hide<br></br>Growth<br></br>Beans</button>
+            <button className="button-root category-hide" onClick={handleGrowth}>Hide<br></br>Beans</button>
             :
-            <button className="button-root category m-l" onClick={handleGrowth}>View<br></br>Growth<br></br>Beans</button>
+            <button className="button-root category" onClick={handleGrowth}>Growth<br></br>Beans</button>
           }
-          </Row>
-          <Row>
           {
-            viewRandom
-            ?
-            <button className="button-root category-hide" onClick={handleRandom}>Hide<br></br>Random<br></br>Bean</button>
-            :
-            <button className="button-root category" onClick={handleRandom}>View<br></br>Random<br></br>Bean</button>
+              viewAcceptance
+              ?
+              <button className="button-root category-hide m-l" onClick={handleAcceptance}>Hide<br></br>Beans</button>
+              :
+              <button className="button-root category m-l" onClick={handleAcceptance}>Acceptance<br></br>Beans</button>
           }
           { 
             viewBeans 
             ? 
-            <button className="button-root category-hide m-l" onClick={handleView}>Hide<br></br>All<br></br>Beans</button>
+            <button className="button-root category-hide m-l" onClick={handleView}>Hide<br></br>All Beans</button>
             : 
-            <button className="button-root category m-l" onClick={handleView}>View<br></br>All<br></br>Beans</button>
+            <button className="button-root category m-l" onClick={handleView}>All<br></br>Beans</button>
           }
           </Row>
+          {
+          viewBeans === false 
+          && viewSelfLove === false 
+          && viewAcceptance === false 
+          && viewConfidence === false 
+          && viewGrowth === false 
+          && viewRandom === false ?
+          <p className="beans-placeholder">Choose a Category</p>
+          :
+          ""
+        }
           {
             viewSelfLove
             ?
@@ -249,21 +259,9 @@ const App = () => {
           : 
           ""
         }
-        {
-          viewBeans === false 
-          && viewSelfLove === false 
-          && viewAcceptance === false 
-          && viewConfidence === false 
-          && viewGrowth === false 
-          && viewRandom === false ?
-          <p className="beans-placeholder">Choose A Beans Category or a Random Bean to View Affirmations</p>
-          :
-          <></>
-        }
-        
       </Container>
-      <footer>
-        Created by <a>Alison Sipos </a>
+      <footer className="beans-footer">
+      <img className="footer-icon" src="https://beans-affirmations.s3.us-east-2.amazonaws.com/Beans_Icon.png" alt="logo icon"></img>  Created by <a href="https://www.linkedin.com/in/siposalison/" target="_blank" rel="noreferrer" className="footer-link">Alison Sipos </a>
       </footer>
     </div>
   );
