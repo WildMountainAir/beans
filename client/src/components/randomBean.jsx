@@ -12,7 +12,7 @@ const RandomBean = ({beans}) => {
       <thead className="beans-table-data beans-title">Focus your intention on {beans[randomNum].category}</thead>
         <tbody>
               <tr key={uuidv4()}>
-                <td className="beans-table-data beans-bean">{beans[randomNum].bean}</td>
+                <td className="beans-table-data beans-bean"><img className="icon" src="https://beans-affirmations.s3.us-east-2.amazonaws.com/Beans_Icon.png" alt="logo icon"></img> {beans[randomNum].bean}</td>
               </tr>
         </tbody>
       </table>
