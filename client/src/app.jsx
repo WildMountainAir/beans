@@ -30,6 +30,7 @@ const App = () => {
 
   useEffect(() => {
     listBeans((error, response) => {
+      console.log('list response', response);
       error ? 'could not get beans' : setAllBeans(response);
     })
     // getSelfLove((error, response) => {
