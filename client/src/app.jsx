@@ -261,7 +261,7 @@ const App = () => {
         }
       </Container>
       <footer className="beans-footer">
-      <img className="footer-icon" src="https://beans-affirmations.s3.us-east-2.amazonaws.com/Beans_Icon.png" alt="logo icon"></img>  Created by <a href="https://www.linkedin.com/in/siposalison/" target="_blank" rel="noreferrer" className="footer-link">Alison Sipos </a>
+      <img className="footer-icon" src="https://beans-affirmations.s3.us-east-2.amazonaws.com/Beans_Icon.png" alt="logo icon"></img>  Created by <a href="https://www.linkedin.com/in/siposalison/" target="_blank" rel="noreferrer" className="footer-link">Alison Sipos</a>
       </footer>
     </div>
   );
