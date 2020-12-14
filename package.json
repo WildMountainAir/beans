@@ -10,7 +10,7 @@
     "seed": "mysql -u root -p < database/schema.sql",
     "dump": "mysqldump -h localhost -u root -pLoveBud beansdb | mysql -h us-cdbr-east-02.cleardb.com -u bf4a3c086ce5b6 -pf9b748a8 heroku_e52e938b158fede",
     "hseed": "mysql --host=us-cdbr-east-02.cleardb.com --user=bf4a3c086ce5b6 --password=f9b748a8 --reconnect heroku_e52e938b158fede < database/schema.sql",
-    "build": "webpack --watch"
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
