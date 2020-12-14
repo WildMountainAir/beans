@@ -7,7 +7,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -b main -d build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cd server/ && nodemon server.js",
+    "start": "cd server/ && node server.js",
     "data": "mysql -u root -p",
     "seed": "mysql -u root -p < database/schema.sql",
     "build": "webpack"
