@@ -4,7 +4,6 @@ import Jumbotron from 'react-bootstrap/Jumbotron';
 import Row from 'react-bootstrap/Row';
 
 import listBeans from './lib/routes';
-import getSelfLove from './lib/routes';
 
 // import BeansCarousel from './components/beansCarousel.jsx';
 // import Welcome from './components/welcome.jsx';
@@ -33,10 +32,10 @@ const App = () => {
     listBeans((error, response) => {
       error ? 'could not get beans' : setAllBeans(response);
     })
-    // getSelfLove((error, response) => {
-    //   console.log('beans', beansSelfLove);
-    //   error ? 'could not get self-love beans' : setSelfLoveBeans(response);
-    // })
+    getSelfLove((error, response) => {
+      console.log('beans', beansSelfLove);
+      error ? 'could not get self-love beans' : setSelfLoveBeans(response);
+    })
   }, []);
 
   const handleView = () => {

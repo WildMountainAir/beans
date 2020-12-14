@@ -26,6 +26,7 @@ const allBeans = (callback) => {
   😈😈😈😈😈😈😈😈😈😈😈😈😈*/
 const categoryBeans = (category, callback) => {
   var sql = `SELECT bean FROM beans WHERE beans.category=${category}`;
+  console.log('getting category bean');
   connection.query(sql, (error, results) => {
     if(error) {
       callback(error, null);
