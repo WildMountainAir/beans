@@ -8,7 +8,6 @@
     "start": "cd server/ && node server.js",
     "data": "mysql -u root -p",
     "seed": "mysql -u root -p < database/schema.sql",
-    "dump": "mysqldump -h localhost -u root -pLoveBud beansdb | mysql -h us-cdbr-east-02.cleardb.com -u bf4a3c086ce5b6 -pf9b748a8 heroku_e52e938b158fede",
     "hseed": "mysql --host=us-cdbr-east-02.cleardb.com --user=bf4a3c086ce5b6 --password=f9b748a8 --reconnect heroku_e52e938b158fede < database/schema.sql",
     "build": "webpack"
   },
@@ -25,7 +24,6 @@
   "dependencies": {
     "bootstrap": "^4.5.3",
     "express": "^4.17.1",
-    "gh-pages": "^3.1.0",
     "mysql": "^2.18.1",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.0",
