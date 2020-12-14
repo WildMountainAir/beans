@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
 // const PORT = 3008;
-const PORT = process.env.PORT || 3008;
+// const PORT = process.env.PORT || 3008;
+const PORT = 3306;
 const queries = require('../database/queries');
 
 app.use(express.static('../client/dist'));
