@@ -32,10 +32,10 @@ const App = () => {
     listBeans((error, response) => {
       error ? 'could not get beans' : setAllBeans(response);
     })
-    getSelfLove((error, response) => {
-      console.log('beans', beansSelfLove);
-      error ? 'could not get self-love beans' : setSelfLoveBeans(response);
-    })
+    // getSelfLove((error, response) => {
+    //   console.log('beans', beansSelfLove);
+    //   error ? 'could not get self-love beans' : setSelfLoveBeans(response);
+    // })
   }, []);
 
   const handleView = () => {
