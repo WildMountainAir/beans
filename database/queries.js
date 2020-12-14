@@ -1,9 +1,15 @@
 const mysql = require("mysql");
+// const connection = mysql.createConnection({
+//   host: "localhost",
+//   user: "root",
+//   password: "LoveBud",
+//   database: "beansdb"
+// });
 const connection = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "LoveBud",
-  database: "beansdb"
+  host: "us-cdbr-east-02.cleardb.com",
+  user: "bf4a3c086ce5b6",
+  password: "bf4a3c086ce5b6",
+  database: "heroku_e52e938b158fede"
 });
 
 connection.connect();
