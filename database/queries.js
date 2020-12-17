@@ -1,16 +1,12 @@
 const mysql = require("mysql");
+const credentialsObj = require('./hidden.js');
 // const connection = mysql.createConnection({
 //   host: "localhost",
 //   user: "root",
 //   password: "LoveBud",
 //   database: "beansdb"
 // });
-const connection = mysql.createConnection({
-  host: "us-cdbr-east-02.cleardb.com",
-  user: "bf4a3c086ce5b6",
-  password: "f9b748a8",
-  database: "heroku_e52e938b158fede"
-});
+const connection = mysql.createConnection(credentialsObj);
 
 connection.connect();
 
@@ -19,13 +15,10 @@ connection.connect();
   😈😈😈😈😈😈😈😈😈😈😈😈😈*/
 const allBeans = (callback) => {
   var sql = "SELECT category, bean FROM beans";
-  console.log('trying');
   connection.query(sql, (error, results) => {
     if(error) {
-      console.log('error', results);
       callback(error, null);
     } else {
-      console.log('NO error', results);
       callback(null, results);
     }
   })
@@ -35,7 +28,6 @@ const allBeans = (callback) => {
   😈😈😈😈😈😈😈😈😈😈😈😈😈*/
 const categoryBeans = (category, callback) => {
   var sql = `SELECT bean FROM beans WHERE beans.category=${category}`;
-  console.log('getting category bean');
   connection.query(sql, (error, results) => {
     if(error) {
       callback(error, null);
