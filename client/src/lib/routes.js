@@ -1,4 +1,4 @@
-const Path = 'http://localhost:3008'
+const Path = 'us-cdbr-east-02.cleardb.com'
 
 const listBeans = (callback) => {
   const path = `${Path}/beans`;
