@@ -5,7 +5,6 @@ import { v4 as uuidv4 } from 'uuid';
 
 const RandomBean = ({beans}) => {
   let randomNum = Math.floor(Math.random() * Math.floor(82));
-  console.log('random:', randomNum);
   return (
     <div>
       <table className="beans-table">
