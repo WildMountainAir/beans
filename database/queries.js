@@ -1,5 +1,5 @@
 const mysql = require("mysql");
-const credentialsObj = require('./hidden.js');
+// const credentialsObj = require('./hidden.js');
 // const connection = mysql.createConnection({
 //   host: "localhost",
 //   user: "root",
