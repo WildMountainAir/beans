@@ -1,4 +1,4 @@
-const Path = 'http://localhost:8080'
+const Path = 'http://localhost:3008'
 
 const listBeans = (callback) => {
   const path = `${Path}/beans`;
