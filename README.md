@@ -2,7 +2,8 @@
 
 ## Introduction to Beans
 <h3 center>Beans = Affirmations = Beans</h3>
-<p>Beans is an affirmations web app delivering affirmations on demand. We talk to ourselves through our thoughts and inner monologue more than anyone else talkes to us. It is no wonder our thoughts play a large role in our overall success and happiness. It is so important to find ways to improve our mindset and speak kindly to ourselves, least risk falling into negative thought patterns. Research has shown affirmations can increase our feelings of self-worth, that&apos;s where beans come in! Beans are a powerful way to improve your mindset on a daily basis. </p>
+<p style="float: left; clear: left">Beans is an affirmations web app delivering affirmations on demand. We talk to ourselves through our thoughts and inner monologue more than anyone else talkes to us. It is no wonder our thoughts play a large role in our overall success and happiness. It is so important to find ways to improve our mindset and speak kindly to ourselves, least risk falling into negative thought patterns. Research has shown affirmations can increase our feelings of self-worth, that&apos;s where beans come in! Beans are a powerful way to improve your mindset on a daily basis. </p> <img style="float:right; clear: right;" src="https://beans-affirmations.s3.us-east-2.amazonaws.com/Untitled+design.gif" alt="app on iphone">
+
 
 ## Features
 - View beans categories
