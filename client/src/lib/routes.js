@@ -1,7 +1,7 @@
-const Path = 'http://localhost:3008'
+// const Path = 'http://localhost:3008'
 
 const listBeans = (callback) => {
-  const path = `${Path}/beans`;
+  const path = `/beans`;
   fetch(path)
     .then((result) => result.json())
     .then((data) => { callback(null, data); })
