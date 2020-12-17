@@ -19,10 +19,13 @@ connection.connect();
   😈😈😈😈😈😈😈😈😈😈😈😈😈*/
 const allBeans = (callback) => {
   var sql = "SELECT category, bean FROM beans";
+  console.log('trying');
   connection.query(sql, (error, results) => {
     if(error) {
+      console.log('error', results);
       callback(error, null);
     } else {
+      console.log('NO error', results);
       callback(null, results);
     }
   })
