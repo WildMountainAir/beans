@@ -12,7 +12,7 @@ const connection = mysql.createConnection(
   user: "bf4a3c086ce5b6",
   password: "f9b748a8",
   database: "heroku_e52e938b158fede"
-}
+  }
 );
 
 connection.connect();
