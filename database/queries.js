@@ -1,11 +1,5 @@
 const mysql = require("mysql");
-// const credentialsObj = require('./hidden.js');
-// const connection = mysql.createConnection({
-//   host: "localhost",
-//   user: "root",
-//   password: "LoveBud",
-//   database: "beansdb"
-// });
+
 const connection = mysql.createConnection(
   {
   host: "us-cdbr-east-02.cleardb.com",
