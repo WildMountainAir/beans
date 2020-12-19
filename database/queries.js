@@ -13,8 +13,8 @@ connection.connect();
 
 function handleDisconnect() {
   
-  connection.connect(function(err) {              // The server is either down
-    if(err) {                                     // or restarting (takes a while sometimes).
+  connection.connect((err) => {
+    if(err) {
       console.log('error when connecting to db:', err);
       setTimeout(handleDisconnect, 2000); // We introduce a delay before attempting to reconnect,
     }                                     // to avoid a hot loop, and to allow our node script to
