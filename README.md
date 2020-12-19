@@ -13,8 +13,7 @@
 ## Future Features
 - Search beans
 - Save beans
-- Sign Up
-- Log In
+- Sign Up/Log In
 
 ## Style Guide
 <img src="https://beans-affirmations.s3.us-east-2.amazonaws.com/Beans_StyleGuide.png" alt="style guide" />
