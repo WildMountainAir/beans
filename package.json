@@ -4,12 +4,11 @@
   "description": "Beans is an on-demand affirmations web app.",
   "main": "index.js",
   "scripts": {
-    "predeploy": "npm run build",
     "start": "cd server/ && node server.js",
     "data": "mysql -u root -p",
     "seed": "mysql -u root -p < database/schema.sql",
     "hseed": "mysql --host=us-cdbr-east-02.cleardb.com --user=bf4a3c086ce5b6 --password=f9b748a8 --reconnect heroku_e52e938b158fede < database/schema.sql",
-    "build": "webpack"
+    "build": "webpack --watch"
   },
   "repository": {
     "type": "git",
