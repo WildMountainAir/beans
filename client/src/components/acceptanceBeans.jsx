@@ -3,7 +3,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
 
-const AcceptanceBeans = ({beans}) => {
+const AcceptanceBeans = ({acceptanceBeans, beans}) => {
+  console.log('acceptance beans in component', acceptanceBeans)
   const acceptanceArray = [];
   // eslint-disable-next-line react/prop-types
   for (var i = 0; i < beans.length; i ++) {
@@ -24,7 +25,19 @@ const AcceptanceBeans = ({beans}) => {
                 <td className="beans-table-data beans-bean"><img className="icon" src="https://beans-affirmations.s3.us-east-2.amazonaws.com/Beans_Icon.png" alt="logo icon"></img> {bean.bean}</td>
               </tr>
             )
-          })}
+            })
+          }
+          <p>ACCEPTANCE BEANS</p>
+          {
+            // eslint-disable-next-line react/prop-types
+            acceptanceBeans.map((bean) => {
+              return (
+                <tr key={uuidv4()}>
+                  <td className="beans-table-data beans-bean"><img className="icon" src="https://beans-affirmations.s3.us-east-2.amazonaws.com/Beans_Icon.png" alt="logo icon"></img> {bean.bean}</td>
+                </tr>
+              )
+              })
+          }
         </tbody>
       </table>
     </div>
@@ -33,6 +46,10 @@ const AcceptanceBeans = ({beans}) => {
 
 AcceptanceBeans.propTypes = {
   beans: PropTypes.shape({
+    category: PropTypes.string,
+    bean: PropTypes.string,
+  }).isRequired,
+  acceptanceBeans: PropTypes.shape({
     category: PropTypes.string,
     bean: PropTypes.string,
   }).isRequired
