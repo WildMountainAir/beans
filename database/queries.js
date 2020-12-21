@@ -58,6 +58,46 @@ const categoryBeans = (category, callback) => {
     }
   })
 }
+const selfLoveBeansQ = (callback) => {
+  var sql = `SELECT bean FROM beans WHERE beans.category="Self Love"`;
+  connection.query(sql, (error, results) => {
+    if(error) {
+      callback(error, null);
+    } else {
+      callback(null, results);
+    }
+  })
+}
+const growthBeansQ = (callback) => {
+  var sql = `SELECT bean FROM beans WHERE beans.category="Growth"`;
+  connection.query(sql, (error, results) => {
+    if(error) {
+      callback(error, null);
+    } else {
+      callback(null, results);
+    }
+  })
+}
+const confidenceBeansQ = (callback) => {
+  var sql = `SELECT bean FROM beans WHERE beans.category="Confidence"`;
+  connection.query(sql, (error, results) => {
+    if(error) {
+      callback(error, null);
+    } else {
+      callback(null, results);
+    }
+  })
+}
+const acceptanceBeansQ = (callback) => {
+  var sql = `SELECT bean FROM beans WHERE beans.category="Acceptance"`;
+  connection.query(sql, (error, results) => {
+    if(error) {
+      callback(error, null);
+    } else {
+      callback(null, results);
+    }
+  })
+}
 /*😈😈😈😈😈😈😈😈😈😈😈😈😈
   😈Get Favorite Beans😈
   😈😈😈😈😈😈😈😈😈😈😈😈😈*/
@@ -75,5 +115,9 @@ const favoriteBeans = (callback) => {
 module.exports = {
   allBeans,
   categoryBeans,
+  selfLoveBeansQ,
+  growthBeansQ,
+  confidenceBeansQ,
+  acceptanceBeansQ,
   favoriteBeans,
 };
