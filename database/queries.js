@@ -7,26 +7,26 @@ const connection = mysql.createConnection(
 
 connection.connect();
 
-function handleDisconnect() {
+// function handleDisconnect() {
   
-  connection.connect((err) => {
-    if(err) {
-      console.log('error when connecting to db:', err);
-      setTimeout(handleDisconnect, 2000); // We introduce a delay before attempting to reconnect,
-    }                                     // to avoid a hot loop, and to allow our node script to
-  });                                     // process asynchronous requests in the meantime.
-                                          // If you're also serving http, display a 503 error.
-  connection.on('error', function(err) {
-    console.log('db error', err);
-    if(err.code === 'PROTOCOL_CONNECTION_LOST') { // Connection to the MySQL server is usually
-      handleDisconnect();                         // lost due to either server restart
-    } else {                                      
-      throw err;
-    }
-  });
-}
+//   connection.connect((err) => {
+//     if(err) {
+//       console.log('error when connecting to db:', err);
+//       setTimeout(handleDisconnect, 2000); // We introduce a delay before attempting to reconnect,
+//     }                                     // to avoid a hot loop, and to allow our node script to
+//   });                                     // process asynchronous requests in the meantime.
+//                                           // If you're also serving http, display a 503 error.
+//   connection.on('error', function(err) {
+//     console.log('db error', err);
+//     if(err.code === 'PROTOCOL_CONNECTION_LOST') { // Connection to the MySQL server is usually
+//       handleDisconnect();                         // lost due to either server restart
+//     } else {                                      
+//       throw err;
+//     }
+//   });
+// }
 
-handleDisconnect();
+// handleDisconnect();
 
 /*😈😈😈😈😈😈😈😈😈😈😈😈😈
   😈  Get All Beans   😈
@@ -85,11 +85,12 @@ const confidenceBeansQ = (callback) => {
   })
 }
 const acceptanceBeansQ = (callback) => {
-  var sql = `SELECT bean FROM beans WHERE beans.category="Acceptance"`;
+  var sql = 'SELECT category, bean FROM beans WHERE beans.category="Acceptance"';
   connection.query(sql, (error, results) => {
     if(error) {
       callback(error, null);
     } else {
+      // producing expected results
       callback(null, results);
     }
   })
