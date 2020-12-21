@@ -3,9 +3,9 @@ import Container from 'react-bootstrap/Container';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Row from 'react-bootstrap/Row';
 
-import listBeans from './lib/routes';
+import listBeans from './lib/routes.js';
+import listAcceptanceBeans from './lib/routes.js';
 
-// import BeansCarousel from './components/beansCarousel.jsx';
 // import Welcome from './components/welcome.jsx';
 import About from './components/about.jsx';
 import Contact from './components/contact.jsx';
@@ -18,6 +18,7 @@ import RandomBean from './components/randomBean.jsx';
 
 const App = () => {
   const [beans, setAllBeans] = useState([]);
+  const [acceptanceBeans, setAcceptanceBeans] = useState([]);
   const [beansSelfLove, setSelfLoveBeans] = useState([]);
   const [viewBeans, setViewBeans] = useState(false);
   const [viewSelfLove, setViewSelfLove] = useState(false);
@@ -32,12 +33,15 @@ const App = () => {
     listBeans((error, response) => {
       error ? 'could not get beans' : setAllBeans(response);
     })
+    listAcceptanceBeans((error, response) => {
+      console.log('acceptance beans in app', response);
+      error ? 'could not get acceptance beans' : setAcceptanceBeans(response);
+    })
     // getSelfLove((error, response) => {
     //   console.log('beans', beansSelfLove);
     //   error ? 'could not get self-love beans' : setSelfLoveBeans(response);
     // })
   }, []);
-
   const handleView = () => {
     setViewBeans(!viewBeans);
     setViewSelfLove(false);
@@ -225,7 +229,7 @@ const App = () => {
             viewAcceptance
             ?
             <div>
-              <AcceptanceBeans beans={beans}/>
+              <AcceptanceBeans beans={beans} acceptanceBeans={acceptanceBeans}/>
             </div>
             :
             ""
