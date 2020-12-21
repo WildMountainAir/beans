@@ -19,7 +19,6 @@ import RandomBean from './components/randomBean.jsx';
 const App = () => {
   const [beans, setAllBeans] = useState([]);
   const [acceptanceBeans, setAcceptanceBeans] = useState([]);
-  const [beansSelfLove, setSelfLoveBeans] = useState([]);
   const [viewBeans, setViewBeans] = useState(false);
   const [viewSelfLove, setViewSelfLove] = useState(false);
   const [viewConfidence, setViewConfidence] = useState(false);
@@ -37,10 +36,6 @@ const App = () => {
       console.log('acceptance beans in app', response);
       error ? 'could not get acceptance beans' : setAcceptanceBeans(response);
     })
-    // getSelfLove((error, response) => {
-    //   console.log('beans', beansSelfLove);
-    //   error ? 'could not get self-love beans' : setSelfLoveBeans(response);
-    // })
   }, []);
   const handleView = () => {
     setViewBeans(!viewBeans);
@@ -211,7 +206,7 @@ const App = () => {
             viewSelfLove
             ?
             <div>
-              <SelfLoveBeans beans={beans} beansSelfLove={beansSelfLove}/>
+              <SelfLoveBeans beans={beans}/>
             </div>
             :
             ""
