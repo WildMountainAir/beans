@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "cd server/ && node server.js",
+    "test": "mocha",
     "data": "mysql -u root -p",
     "seed": "mysql -u root -p < database/schema.sql",
     "hseed": "mysql --host=us-cdbr-east-02.cleardb.com --user=bf4a3c086ce5b6 --password=f9b748a8 --reconnect heroku_e52e938b158fede < database/schema.sql",
@@ -37,8 +38,10 @@
     "@babel/preset-env": "^7.12.10",
     "@babel/preset-react": "^7.12.10",
     "babel-loader": "^8.2.2",
+    "chai": "^4.2.0",
     "eslint": "^7.15.0",
     "eslint-plugin-react": "^7.21.5",
+    "mocha": "^8.2.1",
     "webpack": "^5.10.1",
     "webpack-cli": "^4.2.0"
   }
