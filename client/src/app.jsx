@@ -55,7 +55,7 @@ const App = () => {
       error ? 'could not get acceptance beans' : setSelfLoveBeans(response);
     })
   }, []);
-  
+
   const handleView = () => {
     setViewBeans(!viewBeans);
     setViewSelfLove(false);
@@ -110,10 +110,22 @@ const App = () => {
   }
   const handleAbout = () => {
     setViewContact(false);
+    setViewBeans(false);
+    setViewSelfLove(false);
+    setViewConfidence(false);
+    setViewAcceptance(false);
+    setViewGrowth(false);
+    setViewRandom(false);
     setViewAbout(!viewAbout);
   }
   const handleContact = () => {
     setViewAbout(false);
+    setViewBeans(false);
+    setViewSelfLove(false);
+    setViewConfidence(false);
+    setViewAcceptance(false);
+    setViewGrowth(false);
+    setViewRandom(false);
     setViewContact(!viewContact);
   }
 
