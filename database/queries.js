@@ -44,18 +44,9 @@ const allBeans = (callback) => {
 /*😈😈😈😈😈😈😈😈😈😈😈😈😈
   😈Get Category Beans😈
   😈😈😈😈😈😈😈😈😈😈😈😈😈*/
-const categoryBeans = (category, callback) => {
-  var sql = `SELECT bean FROM beans WHERE beans.category=${category}`;
-  connection.query(sql, (error, results) => {
-    if(error) {
-      callback(error, null);
-    } else {
-      callback(null, results);
-    }
-  })
-}
+
 const selfLoveBeansQ = (callback) => {
-  var sql = `SELECT bean FROM beans WHERE beans.category="Self Love"`;
+  var sql = `SELECT category, bean FROM beans WHERE category="Self Love"`;
   connection.query(sql, (error, results) => {
     if(error) {
       callback(error, null);
@@ -65,7 +56,7 @@ const selfLoveBeansQ = (callback) => {
   })
 }
 const growthBeansQ = (callback) => {
-  var sql = `SELECT bean FROM beans WHERE beans.category="Growth"`;
+  var sql = `SELECT category, bean FROM beans WHERE category="Growth"`;
   connection.query(sql, (error, results) => {
     if(error) {
       callback(error, null);
@@ -75,7 +66,7 @@ const growthBeansQ = (callback) => {
   })
 }
 const confidenceBeansQ = (callback) => {
-  var sql = `SELECT bean FROM beans WHERE beans.category="Confidence"`;
+  var sql = `SELECT category, bean FROM beans WHERE category="Confidence"`;
   connection.query(sql, (error, results) => {
     if(error) {
       callback(error, null);
@@ -85,7 +76,7 @@ const confidenceBeansQ = (callback) => {
   })
 }
 const acceptanceBeansQ = (callback) => {
-  var sql = 'SELECT category, bean FROM beans WHERE beans.category="Acceptance"';
+  var sql = 'SELECT category, bean FROM beans WHERE category="Acceptance"';
   connection.query(sql, (error, results) => {
     if(error) {
       callback(error, null);
@@ -111,7 +102,6 @@ const favoriteBeans = (callback) => {
 
 module.exports = {
   allBeans,
-  categoryBeans,
   selfLoveBeansQ,
   growthBeansQ,
   confidenceBeansQ,
