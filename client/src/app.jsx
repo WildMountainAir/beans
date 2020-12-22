@@ -5,6 +5,9 @@ import Row from 'react-bootstrap/Row';
 
 import listBeans from './lib/routes.js';
 import listAcceptanceBeans from './lib/routes.js';
+import listGrowthBeans from './lib/routes.js';
+import listSelfLoveBeans from './lib/routes.js';
+import listConfidenceBeans from './lib/routes.js';
 
 // import Welcome from './components/welcome.jsx';
 import About from './components/about.jsx';
@@ -19,6 +22,9 @@ import RandomBean from './components/randomBean.jsx';
 const App = () => {
   const [beans, setAllBeans] = useState([]);
   const [acceptanceBeans, setAcceptanceBeans] = useState([]);
+  const [growthBeans, setGrowthBeans] = useState([]);
+  const [selfLoveBeans, setSelfLoveBeans] = useState([]);
+  const [confidenceBeans, setConfidenceBeans] = useState([]);
   const [viewBeans, setViewBeans] = useState(false);
   const [viewSelfLove, setViewSelfLove] = useState(false);
   const [viewConfidence, setViewConfidence] = useState(false);
@@ -35,6 +41,18 @@ const App = () => {
     listAcceptanceBeans((error, response) => {
       console.log('acceptance beans in app', response);
       error ? 'could not get acceptance beans' : setAcceptanceBeans(response);
+    })
+    listGrowthBeans((error, response) => {
+      console.log('acceptance beans in app', response);
+      error ? 'could not get acceptance beans' : setGrowthBeans(response);
+    })
+    listConfidenceBeans((error, response) => {
+      console.log('acceptance beans in app', response);
+      error ? 'could not get acceptance beans' : setConfidenceBeans(response);
+    })
+    listSelfLoveBeans((error, response) => {
+      console.log('acceptance beans in app', response);
+      error ? 'could not get acceptance beans' : setSelfLoveBeans(response);
     })
   }, []);
   const handleView = () => {
@@ -206,7 +224,7 @@ const App = () => {
             viewSelfLove
             ?
             <div>
-              <SelfLoveBeans beans={beans}/>
+              <SelfLoveBeans beans={beans} selfLoveBeans={selfLoveBeans}/>
             </div>
             :
             ""
@@ -215,7 +233,7 @@ const App = () => {
             viewConfidence
             ?
             <div>
-              <ConfidenceBeans beans={beans}/>
+              <ConfidenceBeans beans={beans} confidenceBeans={confidenceBeans}/>
             </div>
             :
             ""
@@ -233,7 +251,7 @@ const App = () => {
             viewGrowth
             ?
             <div>
-              <GrowthBeans beans={beans}/>
+              <GrowthBeans beans={beans} growthBeans={growthBeans}/>
             </div>
             :
             ""
