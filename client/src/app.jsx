@@ -43,15 +43,15 @@ const App = () => {
       error ? 'could not get acceptance beans' : setAcceptanceBeans(response);
     })
     listGrowthBeans((error, response) => {
-      console.log('acceptance beans in app', response);
+      console.log('growth beans in app', response);
       error ? 'could not get acceptance beans' : setGrowthBeans(response);
     })
     listConfidenceBeans((error, response) => {
-      console.log('acceptance beans in app', response);
+      console.log('confidence beans in app', response);
       error ? 'could not get acceptance beans' : setConfidenceBeans(response);
     })
     listSelfLoveBeans((error, response) => {
-      console.log('acceptance beans in app', response);
+      console.log('self love beans in app', response);
       error ? 'could not get acceptance beans' : setSelfLoveBeans(response);
     })
   }, []);
