@@ -38,13 +38,13 @@ body {
   margin-left: 10%;
 }
 .arrow {
-  width: 20px;
+  width: 1.5rem;
   height: auto;
 }
 .arrow-btn {
   background-color: #3e3d57;
   border: none;
-  width: 20px;
+  width: 1.5rem;
   height: auto;
 }
 .arrow-btn:focus {
@@ -52,7 +52,7 @@ body {
   box-shadow: none;
 }
 .arrow-btn:active {
-  transform: scale(.9);
+  transform: scale(.8);
   outline: none !important;
   box-shadow: none;
 }
