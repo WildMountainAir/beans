@@ -55,6 +55,7 @@ const App = () => {
       error ? 'could not get acceptance beans' : setSelfLoveBeans(response);
     })
   }, []);
+  
   const handleView = () => {
     setViewBeans(!viewBeans);
     setViewSelfLove(false);
