@@ -20,6 +20,25 @@ app.get("/beans/Acceptance", (req,res) => {
   });
 });
 
+app.get("/beans/Growth", (req,res) => {
+  queries.growthBeansQ((error, data) => {
+    console.log('growth beans server results', data);
+    error ? res.status(404).send(error) : res.status(202).send(data);
+  });
+});
+
+app.get("/beans/Confidence", (req,res) => {
+  queries.confidenceBeansQ((error, data) => {
+    console.log('confidence beans server results', data);
+    error ? res.status(404).send(error) : res.status(202).send(data);
+  });
+});
+app.get("/beans/Self-Love", (req,res) => {
+  queries.selfLoveBeansQ((error, data) => {
+    console.log('self love beans server results', data);
+    error ? res.status(404).send(error) : res.status(202).send(data);
+  });
+});
 // Listening for requests on the PORT
 app.listen(PORT, () => {
     console.log(`🛥  Server is running and listening on port ${PORT} 🛥`)
