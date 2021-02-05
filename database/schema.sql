@@ -10,14 +10,14 @@ CREATE TABLE IF NOT EXISTS beans (
   favorite BOOLEAN
 );
 
-CREATE TABLE IF NOT EXISTS users (
-  id INT AUTO_INCREMENT UNIQUE PRIMARY KEY,
-  fname TEXT,
-  lname TEXT,
-  username TEXT,
-  email TEXT,
-  passcode TEXT
-);
+-- CREATE TABLE IF NOT EXISTS users (
+--   id INT AUTO_INCREMENT UNIQUE PRIMARY KEY,
+--   fname TEXT,
+--   lname TEXT,
+--   username TEXT,
+--   email TEXT,
+--   passcode TEXT
+-- );
 
 INSERT INTO beans (category, bean, favorite) VALUES ('Self Love', 'I am love.', false);
 INSERT INTO beans (category, bean, favorite) VALUES ('Self Love', 'I love myself and am perfect the way I am.', false);
@@ -101,4 +101,4 @@ INSERT INTO beans (category, bean, favorite) VALUES ('Growth', 'I am releasing o
 INSERT INTO beans (category, bean, favorite) VALUES ('Growth', 'I am planting the seeds of growth in my life and I am committed to watering them every day.', false);
 INSERT INTO beans (category, bean, favorite) VALUES ('Growth', 'I am exchanging my need to always be right for my need to always be growing.', false);
 
-INSERT INTO users (fname, lname, username, email, passcode) VALUES ('Alison', 'Sipos', 'LvlyAli', 'alison.sipos@icloud.com', 'password');
+-- INSERT INTO users (fname, lname, username, email, passcode) VALUES ('Alison', 'Sipos', 'LvlyAli', 'alison.sipos@icloud.com', 'password');
