@@ -1,6 +1,7 @@
 /* Custom Styles */
 body {
   background-color: #3e3d57;
+  /* background-color: #edc17e50; */
   color: #edc17e;
   font-family: 'Josefin Sans', sans-serif;
   margin: 2rem auto 0 auto;
@@ -9,11 +10,11 @@ body {
 }
 /* Typography */
 .beans-intro {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 300;
 }
 .contact {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 300;
 }
 /* Logos */
@@ -25,6 +26,7 @@ body {
   width: 30%;
   height: auto;
 }
+/* Icons */
 .icon {
   height: 1.5rem;
   width: 1.5rem;
@@ -37,6 +39,7 @@ body {
 .m-l-icon {
   margin-left: 10%;
 }
+/* Arrows */
 .arrow {
   width: 1.5rem;
   height: auto;
@@ -72,7 +75,7 @@ body {
 .category {
   background-color: #cb527e;
   width: 15rem;
-  height: 10rem;
+  height: 9rem;
   font-size: 2rem;
   color: #edc17e;
   margin-bottom: 3rem;
@@ -80,7 +83,7 @@ body {
 .category-hide {
   background-color: #edc17e;
   width: 15rem;
-  height: 10rem;
+  height: 9rem;
   font-size: 2rem;
   color: #cb527e;
   margin-bottom: 3rem;
@@ -95,7 +98,7 @@ body {
 }
 /* App Header */
 .links {
-  font-size: 2rem;
+  font-size: 4rem;
   color: #cb527e;
   display: inline;
 }
@@ -116,17 +119,16 @@ body {
 .beans-table-header {
   color: #cb527e;
   font-family: 'Merriweather', serif;
-  font-size: 2rem;
+  font-size: 3rem;
   padding: 10px 15px;
 }
 .beans-table-data {
-  font-size: 2rem;
+  font-size: 3rem;
   padding: 10px 15px;
 }
 .beans-category {
   color: #cb527e
 }
-
 .beans-bean {
   color: #edc17e;
 }
@@ -135,9 +137,11 @@ body {
   color: #cb527e;
 }
 .beans-footer {
+  position: sticky;
+  bottom: auto;
   margin: 3rem 0 1rem 0;
   flex-shrink: 0;
-  font-size: 1.1rem;
+  font-size: 2rem;
   font-family: 'Merriweather', serif;
 }
 .footer-icon {
