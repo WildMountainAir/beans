@@ -11,7 +11,7 @@ const listAcceptanceBeans = (callback) => {
   const path =`http://localhost:3008/beans/Acceptance`;
   fetch(path)
     .then((result) => result.json())
-    .then((data) => { console.log('trying'); callback(null, data); })
+    .then((data) => { callback(null, data); })
     .catch((error) => { callback(error, null); });
 };
 
