@@ -3,22 +3,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
 
-const ConfidenceBeans = ({beans}) => {
-  const confidenceArray = [];
-  // eslint-disable-next-line react/prop-types
-  for (var i = 0; i < beans.length; i ++) {
-    if (beans[i].category === 'Confidence') {
-      confidenceArray.push(beans[i]);
-    }
-  }
+const ConfidenceBeans = ({confidenceBeans}) => {
+  
   return (
     <div>
       <table className="beans-table">
       <thead className="beans-table-data beans-title">Focus your intention on Confidence</thead>
         <tbody>
           {
-            // eslint-disable-next-line react/prop-types
-            confidenceArray.map((bean) => {
+            confidenceBeans.map((bean) => {
             return (
               <tr key={uuidv4()}>
                 <td className="beans-table-data beans-bean"><img className="icon" src="https://beans-affirmations.s3.us-east-2.amazonaws.com/Beans_Icon.png" alt="logo icon"></img> {bean.bean}</td>
@@ -32,9 +25,10 @@ const ConfidenceBeans = ({beans}) => {
 }
 
 ConfidenceBeans.propTypes = {
-  beans: PropTypes.shape({
+  confidenceBeans: PropTypes.shape({
     category: PropTypes.string,
     bean: PropTypes.string,
+    map: PropTypes.func,
   }).isRequired
 }
 
