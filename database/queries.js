@@ -81,7 +81,6 @@ const acceptanceBeansQ = (callback) => {
     if(error) {
       callback(error, null);
     } else {
-      // producing expected results
       callback(null, results);
     }
   })
