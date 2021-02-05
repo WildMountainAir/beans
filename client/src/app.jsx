@@ -33,7 +33,6 @@ const App = () => {
 
   useEffect(() => {
     theLists.listBeans((error, response) => {
-      console.log('list acc beans fn', theLists.listAcceptanceBeans);
       error ? 'could not get beans' : setAllBeans(response);
     })
   }, []);
@@ -49,7 +48,6 @@ const App = () => {
 
   const handleSelfLove = () => {
     theLists.listSelfLoveBeans((error, response) => {
-      console.log('self love beans in app', response);
       error ? 'could not get acceptance beans' : setSelfLoveBeans(response);
     })
 
@@ -76,7 +74,6 @@ const App = () => {
 
   const handleAcceptance = () => {
     theLists.listAcceptanceBeans((error, response) => {
-      console.log('acceptance beans in app', response);
       error ? 'could not get acceptance beans' : setAcceptanceBeans(response);
     })
 
@@ -238,7 +235,7 @@ const App = () => {
             viewSelfLove
             ?
             <div>
-              <SelfLoveBeans beans={beans} selfLoveBeans={selfLoveBeans}/>
+              <SelfLoveBeans selfLoveBeans={selfLoveBeans}/>
             </div>
             :
             ""
@@ -247,7 +244,7 @@ const App = () => {
             viewConfidence
             ?
             <div>
-              <ConfidenceBeans beans={beans} confidenceBeans={confidenceBeans}/>
+              <ConfidenceBeans confidenceBeans={confidenceBeans}/>
             </div>
             :
             ""
@@ -256,7 +253,7 @@ const App = () => {
             viewAcceptance
             ?
             <div>
-              <AcceptanceBeans beans={beans} acceptanceBeans={acceptanceBeans}/>
+              <AcceptanceBeans acceptanceBeans={acceptanceBeans}/>
             </div>
             :
             ""
@@ -265,7 +262,7 @@ const App = () => {
             viewGrowth
             ?
             <div>
-              <GrowthBeans beans={beans} growthBeans={growthBeans}/>
+              <GrowthBeans growthBeans={growthBeans}/>
             </div>
             :
             ""
