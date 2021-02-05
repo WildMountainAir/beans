@@ -2,7 +2,7 @@ import React from 'react';
 import { Container } from 'react-bootstrap';
 
 
-const Search = () => {
+const SearchBar = () => {
 
   return (
     <Container>
@@ -11,4 +11,4 @@ const Search = () => {
   )
 }
 
-export default Search;
+export default SearchBar;
