@@ -13,30 +13,38 @@ app.get("/beans", (req,res) => {
   });
 });
 
-app.get("/beans/Acceptance", (req,res) => {
-  queries.acceptanceBeansQ((error, data) => {
-    // getting expected results
-    error ? res.status(404).send(error) : res.status(202).send(data);
+app.get("/beans/Growth", (req,res) => {
+  queries.growthBeansQ((err, results) => {
+    if (err) {
+      throw err
+    }
+    res.status(202).send(results)
   });
 });
 
-app.get("/beans/Growth", (req,res) => {
-  queries.growthBeansQ((error, data) => {
-    console.log('growth beans server results', data);
-    error ? res.status(404).send(error) : res.status(202).send(data);
-  });
+app.get("/beans/Acceptance", (req, res) => {
+  queries.acceptanceBeansQ((err, results) => {
+    if (err) {
+      throw err
+    }
+    res.status(202).send(results)
+  })
 });
 
 app.get("/beans/Confidence", (req,res) => {
-  queries.confidenceBeansQ((error, data) => {
-    console.log('confidence beans server results', data);
-    error ? res.status(404).send(error) : res.status(202).send(data);
+  queries.confidenceBeansQ((err, results) => {
+    if (err) {
+      throw err
+    }
+    res.status(202).send(results)
   });
 });
 app.get("/beans/Self-Love", (req,res) => {
-  queries.selfLoveBeansQ((error, data) => {
-    console.log('self love beans server results', data);
-    error ? res.status(404).send(error) : res.status(202).send(data);
+  queries.selfLoveBeansQ((err, results) => {
+    if (err) {
+      throw err
+    }
+    res.status(202).send(results)
   });
 });
 // Listening for requests on the PORT
