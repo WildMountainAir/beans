@@ -3,11 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Row from 'react-bootstrap/Row';
 
-import listBeans from './lib/routes.js';
-import listAcceptanceBeans from './lib/routes.js';
-import listGrowthBeans from './lib/routes.js';
-import listSelfLoveBeans from './lib/routes.js';
-import listConfidenceBeans from './lib/routes.js';
+import theLists from './lib/routes.js';
 
 // import Welcome from './components/welcome.jsx';
 import About from './components/about.jsx';
@@ -25,6 +21,7 @@ const App = () => {
   const [growthBeans, setGrowthBeans] = useState([]);
   const [selfLoveBeans, setSelfLoveBeans] = useState([]);
   const [confidenceBeans, setConfidenceBeans] = useState([]);
+
   const [viewBeans, setViewBeans] = useState(false);
   const [viewSelfLove, setViewSelfLove] = useState(false);
   const [viewConfidence, setViewConfidence] = useState(false);
@@ -35,24 +32,9 @@ const App = () => {
   const [viewContact, setViewContact] = useState(false);
 
   useEffect(() => {
-    listBeans((error, response) => {
+    theLists.listBeans((error, response) => {
+      console.log('list acc beans fn', theLists.listAcceptanceBeans);
       error ? 'could not get beans' : setAllBeans(response);
-    })
-    listAcceptanceBeans((error, response) => {
-      console.log('acceptance beans in app', response);
-      error ? 'could not get acceptance beans' : setAcceptanceBeans(response);
-    })
-    listGrowthBeans((error, response) => {
-      console.log('growth beans in app', response);
-      error ? 'could not get acceptance beans' : setGrowthBeans(response);
-    })
-    listConfidenceBeans((error, response) => {
-      console.log('confidence beans in app', response);
-      error ? 'could not get acceptance beans' : setConfidenceBeans(response);
-    })
-    listSelfLoveBeans((error, response) => {
-      console.log('self love beans in app', response);
-      error ? 'could not get acceptance beans' : setSelfLoveBeans(response);
     })
   }, []);
 
@@ -66,6 +48,11 @@ const App = () => {
   }
 
   const handleSelfLove = () => {
+    theLists.listSelfLoveBeans((error, response) => {
+      console.log('self love beans in app', response);
+      error ? 'could not get acceptance beans' : setSelfLoveBeans(response);
+    })
+
     setViewBeans(false);
     setViewConfidence(false);
     setViewAcceptance(false);
@@ -75,6 +62,10 @@ const App = () => {
   }
 
   const handleConfidence = () => {
+    theLists.listConfidenceBeans((error, response) => {
+      error ? 'could not get acceptance beans' : setConfidenceBeans(response);
+    })
+
     setViewBeans(false);
     setViewSelfLove(false);
     setViewAcceptance(false);
@@ -84,6 +75,11 @@ const App = () => {
   }
 
   const handleAcceptance = () => {
+    theLists.listAcceptanceBeans((error, response) => {
+      console.log('acceptance beans in app', response);
+      error ? 'could not get acceptance beans' : setAcceptanceBeans(response);
+    })
+
     setViewBeans(false);
     setViewSelfLove(false);
     setViewConfidence(false);
@@ -93,6 +89,10 @@ const App = () => {
   }
 
   const handleGrowth = () => {
+    theLists.listGrowthBeans((error, response) => {
+      error ? 'could not get growth beans' : setGrowthBeans(response);
+    })
+
     setViewBeans(false);
     setViewSelfLove(false);
     setViewConfidence(false);
@@ -100,6 +100,7 @@ const App = () => {
     setViewRandom(false);
     setViewGrowth(!viewGrowth);
   }
+
   const handleRandom = () => {
     setViewBeans(false);
     setViewSelfLove(false);
