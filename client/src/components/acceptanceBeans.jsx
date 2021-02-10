@@ -1,5 +1,4 @@
 import React from 'react';
-// import Table from 'react-bootstrap/Table';
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -26,10 +25,6 @@ const AcceptanceBeans = ({acceptanceBeans}) => {
 }
 
 AcceptanceBeans.propTypes = {
-  beans: PropTypes.shape({
-    category: PropTypes.string,
-    bean: PropTypes.string,
-  }).isRequired,
   acceptanceBeans: PropTypes.shape({
     category: PropTypes.string,
     bean: PropTypes.string,
